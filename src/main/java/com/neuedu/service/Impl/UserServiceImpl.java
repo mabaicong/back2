@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService {
     UserMapper userMapper;
     @Override
     public List<User> list() {
-        PageHelper.startPage(1,3);
+        PageHelper.startPage(1,5);
         return userMapper.selectByExample(new UserExample());
     }
 }

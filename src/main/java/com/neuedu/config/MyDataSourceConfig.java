@@ -26,14 +26,10 @@ public class MyDataSourceConfig {
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource")
     public DataSource dataSource() {
-        System.out.println(driver);
-        System.out.println(url);
-        System.out.println(username);
-        System.out.println(password);
         HikariConfig hikariConfig = new HikariConfig();
         hikariConfig.setDriverClassName(driver);
         hikariConfig.setJdbcUrl(url);
-        hikariConfig.setUsername(username);
+        hikariConfig.setUsername("root");
         hikariConfig.setPassword(password);
         hikariConfig.setMinimumIdle(8);
         hikariConfig.setMaximumPoolSize(20);
